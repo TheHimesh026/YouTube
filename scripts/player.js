@@ -16,7 +16,6 @@ function getVideoDetails(url){
 };
 
 function renderPlayer(data,url){
-  console.log(data);
  innerHtml = 
   `<div class="plyer-item">
     <div class="player-container">

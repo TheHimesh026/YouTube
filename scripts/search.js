@@ -129,7 +129,7 @@ function attachNewStateEventListeners() {
   });
 }
 
-const KEY = atob(import.meta.env.VITE_YOUTUBE_KEY);
+const KEY = import.meta.env.VITE_YOUTUBE_KEY;
 async function searchVideo(input) {
   const searchURL = `${import.meta.env.VITE_YOUTUBE_BASE_URL}/search?key=${KEY}&part=snippet&type=video&maxresult=10&q=${input}`;
   const result = await fetchRequest(searchURL);

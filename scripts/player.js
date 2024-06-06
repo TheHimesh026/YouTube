@@ -16,6 +16,7 @@ function getVideoDetails(url){
 };
 
 function renderPlayer(data,url){
+  console.log(data);
  innerHtml = 
   `<div class="plyer-item">
     <div class="player-container">
@@ -24,7 +25,7 @@ function renderPlayer(data,url){
   </div>
   <div class="video-detail">
     <span class="channel-thumbnail">
-      <img src="https://yt3.ggpht.com/3095TIO28q9_IfeiM2Uqbr_vwxpJU_4zaNkzL5Pob7jaWApbb2E_U5sjKIkYBZ28qAjf6m43ZjY=s68-c-k-c0x00ffffff-no-rj">
+      <img src=${data.thumbnail}>
     </span>
     <div class="video-info">
       <span class="video-title">

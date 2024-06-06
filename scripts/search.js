@@ -76,13 +76,13 @@ const defaultState = `
   <div class="prev-search-box">
     <div class="logo-name">
       <span class="logo">
-        <img src="/public/icon.png">
+        <img src="/icon.png">
       </span>
       <span class="name">YouTube</span>
     </div>
     <div class="search-icon">
       <span class="icon" id="search">
-        <img src="./public/search-icon.png">
+        <img src="/search-icon.png">
       </span>
     </div>
   </div>
@@ -129,8 +129,9 @@ function attachNewStateEventListeners() {
   });
 }
 
+const KEY = atob(import.meta.env.VITE_YOUTUBE_KEY);
 async function searchVideo(input) {
-  const searchURL = `${import.meta.env.VITE_YOUTUBE_BASE_URL}/search?key=${import.meta.env.VITE_YOUTUBE_KEY}&part=snippet&type=video&maxresult=10&q=${input}`;
+  const searchURL = `${import.meta.env.VITE_YOUTUBE_BASE_URL}/search?key=${KEY}&part=snippet&type=video&maxresult=10&q=${input}`;
   const result = await fetchRequest(searchURL);
   renderFeed(result);
 }

@@ -1,12 +1,11 @@
 import { fetchRequest, sortData,fetchChannelData } from "./function.js";
 const KEY = import.meta.env.VITE_YOUTUBE_KEY;
-const BASE_URL = import.meta.env.VITE_YOUTUBE_BASE_URL;
 const feedInjector = document.querySelector("#feed-injector");
 
 let innerHtml = '';
 
 async function fetchHomeFeed(){
-  const feedURL = `${BASE_URL}/videos?part=snippet&chart=mostPopular&maxResults=10&regionCode=US&key=${KEY}`;
+  const feedURL = `${import.meta.env.VITE_YOUTUBE_BASE_URL}/videos?part=snippet&chart=mostPopular&maxResults=10&regionCode=US&key=${KEY}`;
    const result = await fetchRequest(feedURL);
    renderFeed(result);
 };
